@@ -11,7 +11,7 @@ weight = 10
 [[main]]
 name = "in.takt"
 parent = "Chor"
-pageRef = "in_takt"
+pageRef = "in-takt"
 weight = 11
 
 [[main]]

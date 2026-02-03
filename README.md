@@ -1,29 +1,37 @@
 # Chorgemeinschaft Köngen - Website
 
-Dies ist das Repository für die Website der [Chorgemeinschaft Köngen](https://www.chorgemeinschaft-koengen.de).
+Dies ist für die Website der [Chorgemeinschaft Köngen](https://www.chorgemeinschaft-koengen.de).
 
-[![Aktueller Status](https://github.com/flohoss/chorgemeinschaft-koengen/actions/workflows/hugo.yaml/badge.svg)](https://github.com/flohoss/chorgemeinschaft-koengen/actions/workflows/hugo.yaml)
+## Verwaltungstool
 
-## CMS
+Alle Inhalte sind unter [chorgemeinschaft.fhoss.de](https://chorgemeinschaft.fhoss.de) zum bearbeiten.
 
-Das Content Management System (CMS) ist unter [chorgemeinschaft.fhoss.de](https://chorgemeinschaft.fhoss.de) erreichbar.
+## Login
 
-## Development
+Mit Zugangsdaten [hier](https://chorgemeinschaft.fhoss.de/admin/login) anmelden.
 
-```sh
-# Create a chapter
-docker compose run --rm hugo new --kind chapter codes/_index.md
+![](./docs/login.png)
 
-# Create a page
-docker compose run --rm hugo new codes/invalidate.md
+## Navigation - Menüpunkte
 
-# Troubleshooting
-docker compose run --rm hugo --templateMetrics --templateMetricsHints
+Posts sind Beiträge, die mit Bild unter "Alle Beiträge" veröffentlicht werden.
 
-# Update to latest version
-docker compose run --rm git submodule update --remote --merge
+Pages sind statische Seiten, die im Menü der Website verlinkt sind.
 
-# OR checkout a specific tag version
-docker compose run --rm git -C app/themes/blowfish fetch --tags
-docker compose run --rm git -C app/themes/blowfish checkout tags/v2.97.0
-```
+![](./docs/navigation.png)
+
+## Posts - Beiträge
+
+Beiträge (Posts) sind später auf der Seite unter [https://chorgemeinschaft-koengen.de/posts/](https://chorgemeinschaft-koengen.de/posts/) zu finden.
+
+### Neuer Beitrag
+
+Zum Anlegen eines neuen Beitrags auf "Posts" und dann "Element erstellen" klicken.
+
+![](./docs/neuer-post.png)
+
+Danach alle Pflichtfelder ausfüllen (Diese werden mit Sternchen gekennzeichnet und werden vom System überprüft):
+
+![](./docs/pflichtfelder.png)
+
+Eine Erklärung jedes Feldes steht direkt unter dem Eingabefeld.

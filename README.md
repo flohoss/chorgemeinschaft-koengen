@@ -1,3 +1,11 @@
+# Chorgemeinschaft Köngen - Website
+
+Dies ist das Repository für die Website der [Chorgemeinschaft Köngen](https://www.chorgemeinschaft-koengen.de).
+
+[![Aktueller Status](https://github.com/flohoss/chorgemeinschaft-koengen/actions/workflows/hugo.yaml/badge.svg)](https://github.com/flohoss/chorgemeinschaft-koengen/actions/workflows/hugo.yaml)
+
+## Development
+
 ```sh
 # Create a chapter
 docker compose run --rm hugo new --kind chapter codes/_index.md

@@ -6,32 +6,54 @@ Dies ist für die Website der [Chorgemeinschaft Köngen](https://www.chorgemeins
 
 Alle Inhalte sind unter [chorgemeinschaft.fhoss.de](https://chorgemeinschaft.fhoss.de) zum bearbeiten.
 
-## Login
+### Was ist ein Verwaltungstool?
 
-Mit Zugangsdaten [hier](https://chorgemeinschaft.fhoss.de/admin/login) anmelden.
+Das Verwaltungstool ist ein einfaches System, mit dem Sie die Inhalte der Website bearbeiten können - ganz ohne Programmierkenntnisse. Sie können sich das wie eine Art "Word für Websites" vorstellen.
 
-![](./docs/login.png)
+**Was können Sie damit machen?**
+
+- Neue Beiträge schreiben und veröffentlichen
+- Texte und Bilder bearbeiten
+- Bestehende Seiten aktualisieren
+- Inhalte archivieren
+
+**Wie funktioniert es?**
+Sie melden sich einfach mit Ihren Zugangsdaten an und sehen dann eine übersichtliche Oberfläche mit allen Inhalten der Website. Dort können Sie direkt in den Feldern schreiben, Bilder hochladen und Änderungen speichern. Die Änderungen werden dann automatisch auf der echten Website sichtbar.
+
+## Anmelden
+
+Mit Zugangsdaten [hier](https://chorgemeinschaft.fhoss.de/admin/login) mit E-Mail und Passwort anmelden.
+
+<img src="./docs/login.png" alt="Login Screen" style="width: 100%; max-width: 350px; height: auto;" />
 
 ## Navigation - Menüpunkte
 
-Posts sind Beiträge, die mit Bild unter "Alle Beiträge" veröffentlicht werden.
+### Beiträge (Posts)
 
-Pages sind statische Seiten, die im Menü der Website verlinkt sind.
+<img src="./docs/posts.png" alt="Login Screen" style="width: 100%; height: auto;" />
 
-![](./docs/navigation.png)
+### Seiten (Pages)
 
-## Posts - Beiträge
+<img src="./docs/pages.png" alt="Login Screen" style="width: 100%; height: auto;" />
 
-Beiträge (Posts) sind später auf der Seite unter [https://chorgemeinschaft-koengen.de/posts/](https://chorgemeinschaft-koengen.de/posts/) zu finden.
+### Neuer Beitrag/Seite anlegen
 
-### Neuer Beitrag
+Zum Anlegen eines neuen Beitrags oder einer Seite auf die entsprechende Kategorie klicken und dann "Element erstellen" klicken.
 
-Zum Anlegen eines neuen Beitrags auf "Posts" und dann "Element erstellen" klicken.
+Alle Pflichtfelder (mit \* markiert) ausfüllen und auf "Speichern" klicken.
+Jedes Feld hat eine kleine Erklärung, was dort eingetragen werden soll.
 
-![](./docs/neuer-post.png)
+<img src="./docs/input.png" alt="Login Screen" style="width: 100%; max-width: 400px; height: auto;" />
 
-Danach alle Pflichtfelder ausfüllen (Diese werden mit Sternchen gekennzeichnet und werden vom System überprüft):
+## Veröffentlichen
 
-![](./docs/pflichtfelder.png)
+Wenn man einen Beitrag oder eine Seite fertig bearbeitet hat, muss dieser noch veröffentlicht werden.
+Dazu auf den Button "Veröffentlichen" klicken.
 
-Eine Erklärung jedes Feldes steht direkt unter dem Eingabefeld.
+<img src="./docs/publish.png" alt="Login Screen" style="width: 100%; height: auto;" />
+
+Nun kann man mit klick auf den Hasen oben links direkt auf die Übersichtsseite gelangen auf denen die aktuellen und vergangenen Veröffentlichungs-Prozesse angezeigt werden.
+Wenn diese Erfolgreich waren, ist ein grüner Haken zu sehen.
+Dann sollte die [Webseite](https://www.chorgemeinschaft-koengen.de) die Änderungen anzeigen.
+
+<img src="./docs/github.png" alt="Login Screen" style="width: 100%; height: auto;" />

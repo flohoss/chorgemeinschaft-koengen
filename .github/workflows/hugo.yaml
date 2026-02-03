@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Veröffentlichen der Webseite
 
 on:
   workflow_dispatch:
@@ -49,6 +49,15 @@ jobs:
       - name: Add Hugo to PATH
         run: echo "/tmp/hugo_extract" >> $GITHUB_PATH
 
+      - name: Restore previous build cache
+        id: cache-public
+        uses: actions/cache@v4
+        with:
+          path: ./app/public-cache
+          key: hugo-public-${{ github.sha }}
+          restore-keys: |
+            hugo-public-
+
       - name: Build Hugo site
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
@@ -58,6 +67,19 @@ jobs:
           hugo --gc --minify --baseURL "https://chorgemeinschaft-koengen.de/"
         working-directory: ./app
 
+      - name: Compare and update only changed files
+        run: |
+          mkdir -p ./app/public-cache
+          
+          # Compare files and only copy if content changed (using checksum)
+          rsync -rc --delete \
+            --itemize-changes \
+            ./app/public/ ./app/public-cache/ | tee /tmp/rsync-changes.log
+          
+          # Show what actually changed
+          echo "Files that changed:"
+          grep -E '^>|^c|^\*' /tmp/rsync-changes.log || echo "No content changes detected"
+
       - name: Setup Rclone
         uses: AnimMouse/setup-rclone@v1
         with:
@@ -65,7 +87,9 @@ jobs:
 
       - name: Deploy with rclone sync
         run: |
-          rclone sync ./app/public/ chor:webseite/ \
+          # Sync from cache (only contains actually changed files)
+          rclone sync ./app/public-cache/ chor:webseite/ \
+            --checksum \
             --transfers=4 \
             --checkers=4 \
             --fast-list \

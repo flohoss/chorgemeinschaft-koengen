@@ -1,0 +1,124 @@
+description = "Verein für Akkordeonmusik und Chorgesang - seit 1863"
+logo = "img/logo.png"
+secondaryLogo = "img/secondary-logo.png"
+
+autoSwitchAppearance = true
+colorScheme = "github"
+defaultAppearance = "light"
+
+enableA11y = true
+enableCodeCopy = true
+enableSearch = true
+
+replyByEmail = false
+
+defaultSocialImage = "/android-chrome-512x512.png"
+disableImageOptimization = false
+disableImageOptimizationMD = false
+hotlinkFeatureImage = false
+imagePosition = "50% 50%"
+
+disableTextInHeader = false
+enableStructuredBreadcrumbs = true
+
+highlightCurrentMenuArea = false
+smartTOC = true
+smartTOCHideUnfocusedChildren = false
+
+fingerprintAlgorithm = "sha512"
+
+forgejoDefaultServer = "https://v8.next.forgejo.org"
+giteaDefaultServer = "https://git.fsfe.org"
+
+[header]
+layout = "fixed-gradient" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
+
+[footer]
+showAppearanceSwitcher = true
+showCopyright = false
+showMenu = true
+showScrollToTop = true
+showThemeAttribution = false
+
+[homepage]
+layout = "page" # valid options: page, profile, hero, card, background, custom
+#homepageImage = "IMAGE.jpg" # used in: hero, and card
+cardView = true 
+cardViewScreenWidth = false 
+layoutBackgroundBlur = true # only used when layout equals background
+showMoreLink = false 
+showMoreLinkDest = "/posts/" 
+showRecent = false 
+showRecentItems = 9 
+
+[article]
+showAuthor = false
+showDate = true
+showDateOnlyInArticle = false
+showDateUpdated = false
+showLikes = false
+showViews = false
+# showAuthorBottom = false
+heroStyle = "basic" # valid options: basic, big, background, thumbAndBackground
+layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
+layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
+showBreadcrumbs = false 
+showDraftLabel = true 
+showEdit = false 
+showHero = false 
+# editURL = "https://github.com/username/repo/"
+editAppendPath = true
+invertPagination = false
+relatedContentLimit = 3
+seriesOpened = false
+sharingLinks = []
+showAuthorsBadges = false
+showHeadingAnchors = true
+showPagination = false
+showReadingTime = false
+showRelatedContent = false
+showTableOfContents = true
+showTaxonomies = true
+showWordCount = false
+showZenMode = false
+
+[list]
+cardView = false 
+cardViewScreenWidth = false 
+constrainItemsWidth = false 
+groupByYear = true 
+heroStyle = "basic" # valid options: basic, big, background, thumbAndBackground
+layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
+layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
+orderByWeight = false 
+showBreadcrumbs = true 
+showCards = false 
+showHero = false 
+showLikes = false 
+showSummary = true 
+showTableOfContents = false 
+showViews = false 
+
+[sitemap]
+excludedKinds = ["taxonomy", "term"]
+
+[taxonomy]
+showHero = false
+showTermCount = true
+# heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+cardView = false
+showBreadcrumbs = false
+showLikes = false
+showTableOfContents = false
+showViews = false
+
+[term]
+showHero = false
+# heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+cardView = false
+cardViewScreenWidth = false
+groupByYear = false
+showBreadcrumbs = false
+showLikes = false
+showTableOfContents = true
+showViews = false

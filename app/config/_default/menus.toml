@@ -1,0 +1,126 @@
+[[main]]
+name = "Alle Beiträge"
+pageRef = "posts"
+weight = 5
+
+[[main]]
+name = "Chor"
+pageRef = "tags/chor"
+weight = 10
+
+[[main]]
+name = "in.takt"
+parent = "Chor"
+pageRef = "in_takt"
+weight = 11
+
+[[main]]
+name = "Akkordeon"
+pageRef = "tags/akkordeon"
+weight = 20
+
+[[main]]
+name = "Erstes Orchester"
+parent = "Akkordeon"
+pageRef = "1-akkordeonorchester"
+weight = 21
+
+[[main]]
+name = "Zweites Orchester"
+parent = "Akkordeon"
+pageRef = "2-akkordeonorchester"
+weight = 22
+
+[[main]]
+name = "Schülerensemble"
+parent = "Akkordeon"
+pageRef = "schuelerensemble"
+weight = 23
+
+[[main]]
+name = "Ausbildung"
+pageRef = "musikalische-ausbildung"
+weight = 30
+
+[[main]]
+name = "Eltern Kind Kurs"
+parent = "Ausbildung"
+pageRef = "eltern-kind-kurs"
+weight = 31
+
+[[main]]
+name = "Musikalische Früherziehung"
+parent = "Ausbildung"
+pageRef = "musikalische-frueherziehung"
+weight = 32
+
+[[main]]
+name = "Melodika-Unterricht"
+parent = "Ausbildung"
+pageRef = "melodika-unterricht"
+weight = 33
+
+[[main]]
+name = "Akkordeon-Unterricht"
+parent = "Ausbildung"
+pageRef = "akkordeon-unterricht"
+weight = 34
+
+[[main]]
+name = "Stimmbildung"
+parent = "Ausbildung"
+pageRef = "stimmbildung"
+weight = 35
+
+[[main]]
+name = "Verein"
+weight = 50
+
+[[main]]
+name = "Musikangebot"
+parent = "Verein"
+pageRef = "musikangebot"
+weight = 51
+
+[[main]]
+name = "Mitgliedschaft"
+parent = "Verein"
+pageRef = "mitgliedschaft"
+weight = 52
+
+[[main]]
+name = "Spenden"
+parent = "Verein"
+pageRef = "spenden"
+weight = 53
+
+[[main]]
+name = "Kontakt"
+parent = "Verein"
+pageRef = "kontakt"
+weight = 54
+
+[[footer]]
+name = "Anfahrt"
+pageRef = "anfahrt"
+weight = 101
+
+[[footer]]
+name = "Stellenangebote"
+pageRef = "tags/stellenangebote"
+weight = 102
+
+[[footer]]
+name = "Spenden"
+pageRef = "spenden"
+weight = 103
+
+[[footer]]
+name = "Impressum"
+pageRef = "impressum"
+weight = 104
+
+[[footer]]
+name = "Datenschutzerklärung"
+pageRef = "datenschutz"
+weight = 105

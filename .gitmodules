@@ -1,0 +1,4 @@
+[submodule "app/themes/blowfish"]
+	path = app/themes/blowfish
+	url = https://github.com/nunocoracao/blowfish.git
+	branch = main

@@ -1,0 +1,30 @@
+services:
+  git:
+    image: alpine/git
+    volumes:
+      - .:/repo
+    working_dir: /repo
+    entrypoint: git
+    command: submodule update --init --recursive
+
+  cms:
+    image: node:alpine
+    working_dir: /apps
+    volumes:
+      - ./:/apps
+    command: sh -c "npm install && npm run cms"
+
+  hugo:
+    depends_on:
+      git:
+        condition: service_completed_successfully
+      cms:
+        condition: service_completed_successfully
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.dev
+    command: server --bind 0.0.0.0
+    ports:
+      - '1313:1313'
+    volumes:
+      - ./app/:/app

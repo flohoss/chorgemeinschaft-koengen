@@ -1,0 +1,9 @@
+{
+  "type": "module",
+  "scripts": {
+    "cms": "node scripts/cms.js"
+  },
+  "devDependencies": {
+    "@directus/sdk": "^20.3.0"
+  }
+}

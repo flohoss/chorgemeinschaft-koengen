@@ -1,0 +1,50 @@
+{{ $title := .Get "title" | default (i18n "shortcode.recent_articles" | emojify) }}
+{{ $parent := .Page.RelPermalink }}
+{{ $cardView := .Get "cardView" }}
+{{ $where := .Get "where" }}
+{{ $value := .Get "value" }}
+{{ $past := .Get "past" }}
+{{ $limit := .Get "limit" | default 1 }}
+
+{{/* Start with all pages */}}
+{{ $pages := .Site.RegularPages }}
+
+{{/* Filter out pages where showDate is false */}}
+{{ $pages = where $pages "Params.showdate" "!=" false }}
+
+{{/* Filter by past/future */}}
+{{ if eq $past "true" }}
+  {{ $pages = where $pages "Date" "<=" now }}
+  {{ $pages = sort $pages "Date" "desc" }} {{/* newest first */}}
+  {{ $pages = first $limit $pages }} {{/* limit applies only for past */}}
+{{ else if eq $past "false" }}
+  {{ $pages = where $pages "Date" ">" now }}
+  {{ $pages = sort $pages "Date" "asc" }} {{/* earliest first */}}
+{{ end }}
+
+{{/* Filter by where/value if provided */}}
+{{ if and $where $value }}
+  {{ $pages = where $pages $where $value }}
+{{ end }}
+
+{{ if $pages }}
+<h2 class="mt-20 text-2xl font-extrabold mb-10">{{ $title }}</h2>
+
+{{ if $cardView | default false }}
+  <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+    {{ range $pages }}
+      {{ if not (eq .RelPermalink $parent) }}
+        {{ partial "article-link/card.html" . }}
+      {{ end }}
+    {{ end }}
+  </section>
+{{ else }}
+  <section class="space-y-10 w-full mt-10 mb-10">
+    {{ range $pages }}
+      {{ if not (eq .RelPermalink $parent) }}
+        {{ partial "article-link/simple.html" . }}
+      {{ end }}
+    {{ end }}
+  </section>
+{{ end }}
+{{ end }}

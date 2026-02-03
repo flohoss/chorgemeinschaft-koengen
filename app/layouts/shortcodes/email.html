@@ -1,0 +1,38 @@
+{{- $email := .Get 0 -}}
+{{- $title := .Get 1 | default $email -}}
+
+<span class="email-obfuscated" data-email="{{ $email }}" data-title="{{ $title }}">
+    <noscript>
+        {{ range after 1 (split $email "@") }}{{ (index (split $email "@") 0) }} [at] {{ . | replace "." " [dot] " }}{{
+        end }}
+    </noscript>
+</span>
+
+<script type="text/javascript">
+    // Only run this script once or attach it to a global function to prevent redundancy
+    // For simplicity, we'll assume it runs per shortcode for now.
+    // A more advanced setup would collect all obfuscated emails and decode them once.
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var emailSpans = document.querySelectorAll(".email-obfuscated");
+        emailSpans.forEach(function (span) {
+            if (!span.hasAttribute('data-processed')) { // Prevent processing same element multiple times
+                var email = span.getAttribute("data-email");
+                var title = span.getAttribute("data-title");
+
+                // Simple charCode obfuscation
+                var decodedEmail = '';
+                for (var i = 0; i < email.length; i++) {
+                    decodedEmail += String.fromCharCode(email.charCodeAt(i));
+                }
+
+                var a = document.createElement('a');
+                a.href = 'mailto:' + decodedEmail;
+                a.textContent = title;
+                span.innerHTML = ''; // Clear the noscript content
+                span.appendChild(a);
+                span.setAttribute('data-processed', 'true');
+            }
+        });
+    });
+</script>

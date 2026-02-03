@@ -74,7 +74,7 @@ jobs:
           # Compare files and only copy if content changed (using checksum)
           rsync -rc --delete \
             --itemize-changes \
-            ./app/public/ ./app/public-cache/ | tee /tmp/rsync-changes.log
+            ./app/public/ ./app/public-cache/ > /tmp/rsync-changes.log
           
           # Show what actually changed
           echo "Files that changed:"

@@ -4,6 +4,10 @@ Dies ist das Repository für die Website der [Chorgemeinschaft Köngen](https://
 
 [![Aktueller Status](https://github.com/flohoss/chorgemeinschaft-koengen/actions/workflows/hugo.yaml/badge.svg)](https://github.com/flohoss/chorgemeinschaft-koengen/actions/workflows/hugo.yaml)
 
+## CMS
+
+Das Content Management System (CMS) ist unter [chorgemeinschaft.fhoss.de](https://chorgemeinschaft.fhoss.de) erreichbar.
+
 ## Development
 
 ```sh

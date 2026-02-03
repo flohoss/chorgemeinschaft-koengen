@@ -68,6 +68,7 @@ jobs:
         working-directory: ./app
 
       - name: Compare and update only changed files
+        id: compare-files
         run: |
           mkdir -p ./app/public-cache
           
@@ -78,18 +79,25 @@ jobs:
           
           # Show what actually changed
           echo "Files that changed:"
-          grep -E '^>|^c|^\*' /tmp/rsync-changes.log || echo "No content changes detected"
+          if grep -E '^>|^c|^\*' /tmp/rsync-changes.log; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "No content changes detected"
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
 
       - name: Setup Rclone
+        if: steps.compare-files.outputs.has_changes == 'true'
         uses: AnimMouse/setup-rclone@v1
         with:
           rclone_config: ${{ secrets.RCLONE_CONFIG_BASE64 }}
 
       - name: Deploy with rclone sync
+        if: steps.compare-files.outputs.has_changes == 'true'
         run: |
           # Sync from cache (only contains actually changed files)
           rclone sync ./app/public-cache/ chor:webseite/ \
-            --checksum \
+            --size-only \
             --transfers=4 \
             --checkers=4 \
             --fast-list \

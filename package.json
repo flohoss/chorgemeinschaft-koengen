@@ -4,6 +4,6 @@
     "cms": "node scripts/cms.js"
   },
   "devDependencies": {
-    "@directus/sdk": "^20.3.0"
+    "@directus/sdk": "^21.2.0"
   }
 }

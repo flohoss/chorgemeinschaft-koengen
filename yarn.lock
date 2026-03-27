@@ -3,6 +3,6 @@
 
 
 "@directus/sdk@^21.2.0":
-  version "21.2.0"
-  resolved "https://registry.yarnpkg.com/@directus/sdk/-/sdk-21.2.0.tgz#585674f72a2e69d20dc025ff584c02ff40ffa335"
-  integrity sha512-IrP6vpXqW0WYuwMcKa19odYZDVdTtBL4+0TaZeUGoNWgvncPcuTYVEtX4z93TEPfbFoSD0IwPx0gbhQ7YNbTGg==
+  version "21.2.1"
+  resolved "https://registry.yarnpkg.com/@directus/sdk/-/sdk-21.2.1.tgz#1d0868bd8433a20d0c7efe1bf29cba501f92cc8e"
+  integrity sha512-eXLOwj9Y/+JgNJmGMNLAwlaj7C2TMuKaQNrAjis/WjFTYuR1frSFJOsZhvXPTaoOQ5F+vDBAr3ZGSG3QfKeCnA==

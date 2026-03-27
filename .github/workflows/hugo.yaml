@@ -97,7 +97,7 @@ jobs:
         run: |
           # Sync from cache (only contains actually changed files)
           rclone sync ./app/public-cache/ chor:webseite/ \
-            --size-only \
+            --checksum \
             --transfers=4 \
             --checkers=4 \
             --fast-list \

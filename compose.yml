@@ -1,7 +1,7 @@
 services:
   git:
     profiles:
-      - dev
+      - cms
     image: alpine/git
     volumes:
       - .:/repo
@@ -9,9 +9,9 @@ services:
     entrypoint: git
     command: submodule update --init --recursive
 
-  dev:
+  cms:
     profiles:
-      - dev
+      - cms
     depends_on:
       git:
         condition: service_completed_successfully

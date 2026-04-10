@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@directus/sdk@^21.2.0":
+"@directus/sdk@^21.2.2":
   version "21.2.2"
   resolved "https://registry.yarnpkg.com/@directus/sdk/-/sdk-21.2.2.tgz#1f01601dc9fd677e50af5941c98d638fc357fd46"
   integrity sha512-T8UhDG+GY534AqvLpRmycLYZmIYIaUYzu25X3WeUjWuxCvqAiKqXbYUrTRb0A5Mw93vUeVuyqabzvLbBY9AXxQ==

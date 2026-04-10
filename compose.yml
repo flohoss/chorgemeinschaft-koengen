@@ -19,7 +19,7 @@ services:
     working_dir: /apps
     volumes:
       - ./:/apps
-    command: sh -c "npm install && npm run cms"
+    command: sh -c "yarn install && yarn cms"
 
   hugo:
     build:

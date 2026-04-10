@@ -1,5 +1,7 @@
 services:
   git:
+    profiles:
+      - dev
     image: alpine/git
     volumes:
       - .:/repo
@@ -7,7 +9,12 @@ services:
     entrypoint: git
     command: submodule update --init --recursive
 
-  cms:
+  dev:
+    profiles:
+      - dev
+    depends_on:
+      git:
+        condition: service_completed_successfully
     image: node:alpine
     working_dir: /apps
     volumes:
@@ -15,11 +22,6 @@ services:
     command: sh -c "npm install && npm run cms"
 
   hugo:
-    depends_on:
-      git:
-        condition: service_completed_successfully
-      cms:
-        condition: service_completed_successfully
     build:
       context: .
       dockerfile: docker/Dockerfile.dev
